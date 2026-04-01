@@ -62,4 +62,11 @@ Example:
 - Program behaves correctly at maximum score or limits
 
 References:
+
 GeeksforGeeks (2017). Python Tkinter. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-gui-tkinter/.
+
+GeeksforGeeks (2019). Python | grid() method in Tkinter. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-grid-method-in-tkinter/.
+
+GeeksforGeeks (2019). Python Tkinter Create Button Widget. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-creating-a-button-in-tkinter/.
+
+www.w3schools.com. (n.d.). Python - Nested Dictionaries. [online] Available at: https://www.w3schools.com/python/python_dictionaries_nested.asp.

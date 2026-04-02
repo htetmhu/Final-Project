@@ -1,0 +1,1 @@
+ID:P1000, Name:AA, Math:70.0, Science:99.0, IT:88.0, Average:85.67

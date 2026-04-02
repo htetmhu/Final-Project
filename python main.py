@@ -24,12 +24,16 @@ def adding_info_grades():
         
         # Average Calculation
         average = (math_grade + sci_grade + it_grade) / 3
+
+        #(GeeksforGeeks, 2020)
+        #Updating the average value using StringVar() to UI 
+        average_update.set(f"Average for {name_update}: {average:.2f}")
         
         print(f"Success: ID {id_update} ({name_update}) added with average {average:.2f}")  #using f string to print
 
         #(W3Schools, 2019)
         #Creating and adding the input to text file 
-        with open("student_data.txt", "a") as file:
+        with open("E:\Final\Final-Project\\student_data.txt", "a") as file:
             file.write(f"ID:{id_update}, Name:{name_update}, Math:{math_grade}, Science:{sci_grade}, IT:{it_grade}, Average:{average:.2f}\n")
 
     except ValueError:
@@ -68,5 +72,12 @@ entry_it.grid(row=4, column=1)
 #Linking the function of add_student_data with button using command 
 submit_btn = tk.Button(root, text="Add Data", width=15, command=adding_info_grades)
 submit_btn.grid(row= 5, column=1, pady=10)
+
+#(GeeksforGeeks, 2019)
+#I got this idea from Chat GPT to access the labels with StringVar() 
+average_update = tk.StringVar()
+average_update.set("Average: 0.00") #setting as a default text
+result_label = tk.Label(root, textvariable=average_update, font=("Arial", 12, "bold"), fg="purple") #This is the code for changes
+result_label.grid(row=6, column=0, columnspan=2, pady=10)
 
 root.mainloop()   #Output GUI

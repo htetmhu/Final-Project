@@ -70,3 +70,9 @@ GeeksforGeeks (2019). Python | grid() method in Tkinter. [online] GeeksforGeeks.
 GeeksforGeeks (2019). Python Tkinter Create Button Widget. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-creating-a-button-in-tkinter/.
 
 www.w3schools.com. (n.d.). Python - Nested Dictionaries. [online] Available at: https://www.w3schools.com/python/python_dictionaries_nested.asp.
+
+GeeksforGeeks (2020). Python Tkinter Entry Widget. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-tkinter-entry-widget/.
+
+GeeksforGeeks (2018). Python Nested Dictionary. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-nested-dictionary/.
+
+www.w3schools.com. (n.d.). Python - Access Dictionary Items. [online] Available at: https://www.w3schools.com/python/python_dictionaries_access.asp.

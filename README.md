@@ -76,3 +76,8 @@ W3Schools (n.d.). Python String strip() Method. [online] www.w3schools.com. Avai
 GeeksforGeeks (2018). Python Nested Dictionary. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-nested-dictionary/.
 
 W3Schools (2019). Python File Write. [online] W3schools.com. Available at: https://www.w3schools.com/python/python_file_write.asp.
+
+GeeksforGeeks (2019). Setting and Retrieving values of Tkinter variable Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-setting-and-retrieving-values-of-tkinter-variable/.
+
+GeeksforGeeks (2020). Python Tkinter Label. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-tkinter-label/.
+

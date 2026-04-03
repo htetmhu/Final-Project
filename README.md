@@ -81,3 +81,4 @@ GeeksforGeeks (2019). Setting and Retrieving values of Tkinter variable Python. 
 
 GeeksforGeeks (2020). Python Tkinter Label. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-tkinter-label/.
 
+GeeksforGeeks (2024). Searching Algorithms in Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/dsa/searching-algorithms-in-python/.

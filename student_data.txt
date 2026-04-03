@@ -1,2 +1,4 @@
 ID:P1000, Name:AA, Math:70.0, Science:99.0, IT:88.0, Average:85.67
 ID:P1001, Name:BB, Math:67.0, Science:63.0, IT:66.0, Average:65.33
+ID:P1002, Name:CC, Math:68.0, Science:56.0, IT:86.0, Average:70.00
+ID:P1003, Name:DD, Math:67.0, Science:87.0, IT:87.0, Average:80.33

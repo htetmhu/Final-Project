@@ -78,3 +78,7 @@ W3Schools (2019). Python File Write. [online] W3schools.com. Available at: https
 GeeksforGeeks (2020). Python Tkinter Label. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-tkinter-label/.
 
 GeeksforGeeks (2024). Searching Algorithms in Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/dsa/searching-algorithms-in-python/.
+
+www.w3schools.com. (n.d.). Python - Access Dictionary Items. [online] Available at: https://www.w3schools.com/python/python_dictionaries_access.asp.
+
+GeeksforGeeks (2019). Setting and Retrieving values of Tkinter variable Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-setting-and-retrieving-values-of-tkinter-variable/.

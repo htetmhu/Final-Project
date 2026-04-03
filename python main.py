@@ -5,6 +5,29 @@ from tkinter import messagebox
 #(www.w3schools.com, n.d.)
 students_dict = {}
 
+def idlinear_search(id_list, target_id):
+    for i in range(len(id_list)):
+        if id_list[i] == target_id:
+            return i
+    return -1
+
+def search_student():
+    id_target = ent_id.get().strip()
+    # (www.w3schools.com, n.d.)
+    students_ids = list(students_dict.keys())
+    index = idlinear_search(students_ids, id_target)
+    
+    if index != -1:
+        found_id = students_ids[index]
+        student = students_dict[found_id]
+        gra = student["Grades"]
+        #(GeeksforGeeks, 2019)
+        average_update.set(f"Found: {student['Name']} | M:{gra['Math']} S:{gra['Science']} IT:{gra['IT']}")
+        messagebox.showinfo("Search Result", f"Student {student['Name']} found!")
+    else:
+        average_update.set("Error: ID not found")
+        messagebox.showerror("Search Result", "That Student ID does not exist.")
+
 def adding_info_grades():
     #(W3Schools, n.d.)
     #adding id and name using strip so that it removes the whitespaces 

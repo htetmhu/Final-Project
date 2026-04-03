@@ -13,16 +13,16 @@ def idlinear_search(id_list, target_id):
 
 def search_student():
     id_target = ent_id.get().strip()
-    # (www.w3schools.com, n.d.)
-    students_ids = list(students_dict.keys())
+    #(www.w3schools.com, n.d.)
+    students_ids = list(students_dict.keys())    #searching the students by ids using keys()
     index = idlinear_search(students_ids, id_target)
     
-    if index != -1:
+    if index != -1:      #Checking the validation using if/else
         found_id = students_ids[index]
         student = students_dict[found_id]
         gra = student["Grades"]
         #(GeeksforGeeks, 2019)
-        average_update.set(f"Found: {student['Name']} | M:{gra['Math']} S:{gra['Science']} IT:{gra['IT']}")
+        average_update.set(f"Found: {student['Name']} | M:{gra['Math']} S:{gra['Science']} IT:{gra['IT']}")   #f-string 
         messagebox.showinfo("Search Result", f"Student {student['Name']} found!")
     else:
         average_update.set("Error: ID not found")
@@ -99,6 +99,9 @@ entry_it.grid(row=9, column=0, columnspan=2, pady=(5, 15))
 #Linking the function of add_student_data with button using command 
 submit_button = tk.Button(root, text="Add Data", width=15, command=adding_info_grades)
 submit_button.grid(row=10, column=0, columnspan=2, pady=20)
+
+searching_button = tk.Button(root, text="SEARCHING BY ID", width=15, command=search_student)
+searching_button.grid(row=11, column=0, padx=10, pady=5)
 
 #(GeeksforGeeks, 2019)
 #I got this idea from Chat GPT to access the labels with StringVar() 

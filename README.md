@@ -82,3 +82,5 @@ GeeksforGeeks (2024). Searching Algorithms in Python. [online] GeeksforGeeks. Av
 www.w3schools.com. (n.d.). Python - Access Dictionary Items. [online] Available at: https://www.w3schools.com/python/python_dictionaries_access.asp.
 
 GeeksforGeeks (2019). Setting and Retrieving values of Tkinter variable Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-setting-and-retrieving-values-of-tkinter-variable/.
+
+GeeksforGeeks (2014). Bubble Sort Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-program-for-bubble-sort/.

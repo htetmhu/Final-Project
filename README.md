@@ -84,3 +84,7 @@ www.w3schools.com. (n.d.). Python - Access Dictionary Items. [online] Available 
 GeeksforGeeks (2019). Setting and Retrieving values of Tkinter variable Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-setting-and-retrieving-values-of-tkinter-variable/.
 
 GeeksforGeeks (2014). Bubble Sort Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-program-for-bubble-sort/.
+
+www.w3schools.com. (n.d.). Python - Loop Dictionaries. [online] Available at: https://www.w3schools.com/python/python_dictionaries_loop.asp.
+
+GeeksforGeeks (2020). Python Tkinter MessageBox Widget. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-tkinter-messagebox-widget/.

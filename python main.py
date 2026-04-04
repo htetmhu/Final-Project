@@ -5,6 +5,7 @@ from tkinter import messagebox
 #(www.w3schools.com, n.d.)
 students_dict = {}
 
+#(GeeksforGeeks, 2024)
 def idlinear_search(id_list, target_id):
     for i in range(len(id_list)):
         if id_list[i] == target_id:
@@ -27,6 +28,20 @@ def search_student():
     else:
         average_update.set("Error: ID not found")
         messagebox.showerror("Search Result", "That Student ID does not exist.")
+
+#(GeeksforGeeks, 2014)
+def bubble_sorting_students(sorting_list):
+    n = len(sorting_list)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if sorting_list[j][0] < sorting_list[j + 1][0]:
+                sorting_list[j], sorting_list[j + 1] = sorting_list[j + 1], sorting_list[j]
+                swapped = True
+        if not swapped:
+            break
+    return sorting_list
+
 
 def adding_info_grades():
     #(W3Schools, n.d.)

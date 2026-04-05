@@ -5,6 +5,36 @@ from tkinter import messagebox
 #(www.w3schools.com, n.d.)
 students_dict = {}
 
+def loading_data():
+    #Reading the text file.
+    try:
+        with open("E:\Final\Final-Project\student_data.txt", "r") as file:
+            for line in file:
+                line = line.strip()
+                if not line: 
+                    continue
+                parts = line.split(", ")
+                try:
+                    #(GeeksforGeeks, 2020)
+                    #placing the variables into index places.
+                    students_id = parts[0].split(":")[1]
+                    student_name = parts[1].split(":")[1]
+                    math = float(parts[2].split(":")[1])
+                    sci = float(parts[3].split(":")[1])
+                    it = float(parts[4].split(":")[1])
+
+                    students_dict[students_id] = {
+                        "Name": student_name,
+                        "Grades": {"Math": math, "Science": sci, "IT": it}
+                    }
+                #(GeeksforGeeks, 2019)
+                #Handling the error message to prevent from crashing.
+                except (IndexError, ValueError):
+                    continue 
+        print(f"System: {len(students_dict)} records loaded.")
+    except FileNotFoundError:
+        print("There is no data file found.")
+
 #(GeeksforGeeks, 2024)
 def idlinear_search(id_list, target_id):
     for i in range(len(id_list)):
@@ -31,12 +61,12 @@ def search_student():
 
 #(GeeksforGeeks, 2014)
 def bubble_sorting_students(sorting_list):
-    n = len(sorting_list)
-    for i in range(n):
+    l = len(sorting_list)
+    for m in range(l):
         swapped = False
-        for j in range(0, n - i - 1):
-            if sorting_list[j][0] < sorting_list[j + 1][0]:
-                sorting_list[j], sorting_list[j + 1] = sorting_list[j + 1], sorting_list[j]
+        for n in range(0, l - m - 1):
+            if sorting_list[n][0] < sorting_list[n + 1][0]:
+                sorting_list[n], sorting_list[n + 1] = sorting_list[n + 1], sorting_list[n]
                 swapped = True
         if not swapped:
             break
@@ -150,4 +180,5 @@ average_update.set("System Ready") #setting as a default text
 result_label = tk.Label(root, textvariable=average_update, font=("Arial", 12, "bold"), fg="purple") #This is the code for changes
 result_label.grid(row=13, column=0, columnspan=2, pady=10)
 
+loading_data()
 root.mainloop()   #Output GUI

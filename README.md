@@ -88,3 +88,7 @@ GeeksforGeeks (2014). Bubble Sort Python. [online] GeeksforGeeks. Available at: 
 www.w3schools.com. (n.d.). Python - Loop Dictionaries. [online] Available at: https://www.w3schools.com/python/python_dictionaries_loop.asp.
 
 GeeksforGeeks (2020). Python Tkinter MessageBox Widget. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/python-tkinter-messagebox-widget/.
+
+GeeksforGeeks (2020). How to Index and Slice Strings in Python? [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/how-to-index-and-slice-strings-in-python/#slicing [Accessed 2 Apr. 2026].
+
+GeeksforGeeks (2019). Multiple Exception Handling in Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/multiple-exception-handling-in-python/ [Accessed 2 Apr. 2026].

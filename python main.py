@@ -131,7 +131,7 @@ def adding_info_grades():
         print("Error: Please make sure ID is entered and grades are numeric!")
 
 #Function for charts showing how students perform during academic years
-def show_chart():
+def showing_chart():
     student_id = ent_id.get().strip()
     if student_id in students_dict:
         students = students_dict[student_id]
@@ -139,8 +139,13 @@ def show_chart():
         scores = list(students["Grades"].values())
         plt.figure(figsize=(6, 4))
         plt.bar(subjects, scores, color=['#4851ee', '#4dd698', '#8034cf'])
+        plt.title(f"Grades for {students['Name']}")
+        plt.ylabel("Score")
+        plt.xlabel(f"Subjects that {students['Name']} takes")
+        plt.ylim(0, 100)
+        plt.show()
     else:
-        messagebox.showerror("Error", "Firstly,please enter a valid ID to view the chart.")
+        messagebox.showerror("Error", "Firstly, please enter a valid ID to view the chart.")
 
 #(GeeksforGeeks, 2017)
 #Creating the window
@@ -182,6 +187,9 @@ searching_button.grid(row=11, column=0, padx=10, pady=5)
 
 sorting_button = tk.Button(root, text="SORTING ALL", width=15, command=sorting_students)
 sorting_button.grid(row=11, column=1, padx=10, pady=5)
+
+chart_button = tk.Button(root, text="STUDENT PERFORMANCE CHART", width=35, bg="#b4b4cc", font=font_size_label, command=showing_chart)
+chart_button.grid(row=12, column=0, columnspan=2, pady=20)
 
 #(GeeksforGeeks, 2019)
 #I got this idea from Chat GPT to access the labels with StringVar() 

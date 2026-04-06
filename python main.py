@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import matplotlib.pyplot as plt
 
 #Initializing a nested dictionary to store student info
 #(www.w3schools.com, n.d.)
@@ -129,11 +130,22 @@ def adding_info_grades():
     except ValueError:
         print("Error: Please make sure ID is entered and grades are numeric!")
 
+#Function for charts showing how students perform during academic years
+def show_chart():
+    student_id = ent_id.get().strip()
+    if student_id in students_dict:
+        students = students_dict[student_id]
+        subjects = list(students["Grades"].keys())
+        scores = list(students["Grades"].values())
+        plt.figure(figsize=(6, 4))
+        plt.bar(subjects, scores, color=['#4851ee', '#4dd698', '#8034cf'])
+    else:
+        messagebox.showerror("Error", "Firstly,please enter a valid ID to view the chart.")
+
 #(GeeksforGeeks, 2017)
 #Creating the window
 root = tk.Tk()
 root.title("Student Progress Tracker")
-root.geometry("400x600")   #Setting the size of window
 
 font_size_label = ("Arial", 9, "bold")
 font_size_entry = ("Arial", 12)

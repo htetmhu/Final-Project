@@ -130,6 +130,7 @@ def adding_info_grades():
     except ValueError:
         print("Error: Please make sure ID is entered and grades are numeric!")
 
+#(GeeksforGeeks, 2024)
 #Function to reset everything from the start so that user can input automatically without moving cursor
 def reset_input():
     ent_id.delete(0, tk.END)   #deleting all inputs in entry box
@@ -162,7 +163,7 @@ def showing_chart():
 #Creating the window
 root = tk.Tk()
 root.title("Student Progress Tracker")
-
+root.resizable(False,False)  #User cannot resize the windows either by both x or y axis. 
 font_size_label = ("Arial", 9, "bold")
 font_size_entry = ("Arial", 12)
 

@@ -92,3 +92,5 @@ GeeksforGeeks (2020). Python Tkinter MessageBox Widget. [online] GeeksforGeeks. 
 GeeksforGeeks (2020). How to Index and Slice Strings in Python? [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/how-to-index-and-slice-strings-in-python/#slicing [Accessed 2 Apr. 2026].
 
 GeeksforGeeks (2019). Multiple Exception Handling in Python. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/multiple-exception-handling-in-python/ [Accessed 2 Apr. 2026].
+
+GeeksforGeeks (2024). How to Clear the Entry Widget After Button Press in Tkinter. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/python/how-to-clear-the-entry-widget-after-button-press-in-tkinter/.

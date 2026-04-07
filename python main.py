@@ -54,10 +54,10 @@ def search_student():
         student = students_dict[found_id]
         gra = student["Grades"]
         #(GeeksforGeeks, 2019)
-        average_update.set(f"Found: {student['Name']} | M:{gra['Math']} S:{gra['Science']} IT:{gra['IT']}")   #f-string 
+        avg_update.set(f"Found: {student['Name']} | M:{gra['Math']} S:{gra['Science']} IT:{gra['IT']}")   #f-string 
         messagebox.showinfo("Search Result", f"Student {student['Name']} found!")
     else:
-        average_update.set("Error: ID not found")
+        avg_update.set("Error: ID not found")
         messagebox.showerror("Search Result", "That Student ID does not exist.")
 
 #(GeeksforGeeks, 2014)
@@ -102,9 +102,9 @@ def adding_info_grades():
     upd_name = ent_name.get().strip()
     
     try:
-        m_grade = float(entry_math.get())
-        s_grade = float(entry_sci.get())
-        i_grade = float(entry_it.get())
+        m_grade = float(ent_math.get())
+        s_grade = float(ent_sci.get())
+        i_grade = float(ent_it.get())
         
         #(GeeksforGeeks, 2018)
         #Using id as primary key to access
@@ -118,7 +118,7 @@ def adding_info_grades():
 
         #(GeeksforGeeks, 2020)
         #Updating the average value using StringVar() to UI 
-        average_update.set(f"Average for {upd_name}: {average:.2f}")
+        avg_update.set(f"Average for {upd_name}: {average:.2f}")
         
         print(f"Success: ID {upd_id} ({upd_name}) added with average {average:.2f}")  #using f string to print
 
@@ -129,6 +129,17 @@ def adding_info_grades():
 
     except ValueError:
         print("Error: Please make sure ID is entered and grades are numeric!")
+
+#Function to reset everything from the start so that user can input automatically without moving cursor
+def reset_input():
+    ent_id.delete(0, tk.END)   #deleting all inputs in entry box
+    ent_name.delete(0,tk.END)
+    ent_math.delete(0,tk.END)
+    ent_sci.delete(0,tk.END)
+    ent_it.delete(0,tk.END)
+
+    ent_id.focus_set()
+    avg_update.set("All fields cleared!")
 
 #Function for charts showing how students perform during academic years
 def showing_chart():
@@ -166,16 +177,16 @@ ent_name = tk.Entry(root, font=font_size_entry, justify='center', width=25, bord
 ent_name.grid(row=3, column=0, columnspan=2, pady=(5,15))
 
 tk.Label(root, text="Mathematics Grade:", font=font_size_label).grid(row=4, column=0, columnspan=2, pady=(5, 0))
-entry_math = tk.Entry(root, font=font_size_entry, justify='center', width=25, borderwidth=1, relief="solid")
-entry_math.grid(row=5, column=0, columnspan=2, pady=(5, 15))
+ent_math = tk.Entry(root, font=font_size_entry, justify='center', width=25, borderwidth=1, relief="solid")
+ent_math.grid(row=5, column=0, columnspan=2, pady=(5, 15))
 
 tk.Label(root, text="Science Grade:", font=font_size_label).grid(row=6, column=0, columnspan=2, pady=(5, 0))
-entry_sci = tk.Entry(root, font=font_size_entry, justify='center', width=25, borderwidth=1, relief="solid")
-entry_sci.grid(row=7, column=0, columnspan=2, pady=(5, 15))
+ent_sci = tk.Entry(root, font=font_size_entry, justify='center', width=25, borderwidth=1, relief="solid")
+ent_sci.grid(row=7, column=0, columnspan=2, pady=(5, 15))
 
 tk.Label(root, text="IT Grade:",font=font_size_label).grid(row=8, column=0, columnspan=2, pady=(5, 0))
-entry_it = tk.Entry(root, font=font_size_entry, justify='center', width=25, borderwidth=1, relief="solid")
-entry_it.grid(row=9, column=0, columnspan=2, pady=(5, 15))
+ent_it = tk.Entry(root, font=font_size_entry, justify='center', width=25, borderwidth=1, relief="solid")
+ent_it.grid(row=9, column=0, columnspan=2, pady=(5, 15))
 
 #(GeeksforGeeks, 2019) for buttons 
 #Linking the function of add_student_data with button using command 
@@ -191,13 +202,17 @@ sorting_button.grid(row=11, column=1, padx=10, pady=5)
 chart_button = tk.Button(root, text="STUDENT PERFORMANCE CHART", width=35, bg="#b4b4cc", font=font_size_label, command=showing_chart)
 chart_button.grid(row=12, column=0, columnspan=2, pady=20)
 
+reset_button = tk.Button(root, text="RESET", width=35, bg="#0D0D5D", font=font_size_label, command=reset_input)
+reset_button.grid(row=14, column=0, columnspan=2, pady=20)
+
+
 #(GeeksforGeeks, 2019)
 #I got this idea from Chat GPT to access the labels with StringVar() 
-average_update = tk.StringVar()
-average_update.set("System Ready") #setting as a default text
+avg_update = tk.StringVar()
+avg_update.set("System Ready") #setting as a default text
 
 #(GeeksforGeeks, 2020)
-result_label = tk.Label(root, textvariable=average_update, font=("Arial", 12, "bold"), fg="purple") #This is the code for changes
+result_label = tk.Label(root, textvariable=avg_update, font=("Arial", 12, "bold"), fg="purple") #This is the code for changes
 result_label.grid(row=13, column=0, columnspan=2, pady=10)
 
 loading_data()

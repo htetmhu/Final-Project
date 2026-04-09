@@ -35,9 +35,7 @@ def loading_data():
                 except (IndexError, ValueError):
                     continue 
         messagebox.showinfo("Data Loaded", f"System: {len(students_dict)} records loaded successfully.")
-
     except FileNotFoundError:
-    # Changed from print to warning messagebox
         messagebox.showwarning("File Missing", "There is no data file found. A new one will be created when you add a student.")
 
 #(GeeksforGeeks, 2024) (Searching Algorithms)

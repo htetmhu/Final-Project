@@ -1,3 +1,7 @@
-ID:P1000, Name:April, Math:45.0, Science:67.0, IT:77.0, Average:63.00
+ID:P1000, Name:April, Math:78.0, Science:97.0, IT:76.0, Average:83.67
 ID:P1001, Name:Bobo, Math:86.0, Science:56.0, IT:85.0, Average:75.67
 ID:P1002, Name:Cat, Math:76.0, Science:68.0, IT:97.0, Average:80.33
+ID:P1003, Name:Dede, Math:67.0, Science:56.0, IT:57.0, Average:60.00
+ID:P1004, Name:Geroge, Math:78.0, Science:67.0, IT:79.0, Average:74.67
+ID:P1005, Name:Fran, Math:78.0, Science:89.0, IT:67.0, Average:78.00
+ID:P1006, Name:June, Math:78.0, Science:87.0, IT:78.0, Average:81.00

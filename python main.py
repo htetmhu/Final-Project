@@ -87,13 +87,19 @@ def sorting_students():
         return
 
     sorted_data = bubble_sorting_students(output_list)
-    print("\n Student Rankings (Sorted by Average) ")
+
+    report = "--- STUDENT RANKINGS BY AVERAGE ---\n\n"
+    report = report + "RANK | NAME | AVERAGE\n"
     
-    rank = 1    #Using a manual counter to count 
+    rank = 1   #Looping through sorted data and add lines to 'report' string 
     for student in sorted_data:
-        print(f"{rank}. {student[1]}: {student[0]:.2f}")  #f-string 
+        name = student[1]
+        score = round(student[0], 2)
+        line = str(rank) + ". " + name + ": " + str(score) + "\n"
+        report = report + line
         rank += 1
-    messagebox.showinfo("Sorting Complete", "Ranks printed to console.")
+    messagebox.showinfo("Sorting Results", report)  #Showing the final report string in a messagebox
+
 
 def adding_info_grades():
     #(W3Schools, n.d.) for using strip() 
@@ -105,6 +111,11 @@ def adding_info_grades():
     if not upd_id or not upd_name:
         messagebox.showwarning("Input Error!", "Student ID and Name cannot be empty!")
         return
+    
+    #(Python Tutorial - Master Python Programming For Beginners from Scratch, n.d.) for askyesno() for overwriting the student info
+    if upd_id in students_dict:
+        if not messagebox.askyesno(title="Overwrite?", message="This ID already exists. Do you want to update it?"):
+            return
     
     try:
         m_grade = float(ent_math.get())
@@ -131,13 +142,17 @@ def adding_info_grades():
         #Updating the average value using StringVar() to UI 
         avg_update.set(f"Average for {upd_name}: {average:.2f}")
         
-        print(f"Success: ID {upd_id} ({upd_name}) added with average {average:.2f}")  #using f string to print
-
-        #(W3Schools, 2019) for file read/write
-        #Creating and adding the input to text file 
-        with open("E:\Final\Final-Project\student_data.txt", "a") as file:
-            file.write(f"ID:{upd_id}, Name:{upd_name}, Math:{m_grade}, Science:{s_grade}, IT:{i_grade}, Average:{average:.2f}\n")
-
+        #File handling in safer way
+        try:
+            with open("student_data.txt", "w") as file:
+                for stu_id, information in students_dict.items():
+                    gra = information["Grades"]
+                    line_avg = sum(gra.values()) / len(gra)
+                    file.write(f"ID:{stu_id}, Name:{information['Name']}, Math:{gra['Math']}, Science:{gra['Science']}, IT:{gra['IT']}, Average:{line_avg:.2f}\n")
+            
+            messagebox.showinfo("Success", "Student data saved successfully!")
+        except:
+            messagebox.showerror("File Error", "Could not save to file. Please check if the file is open elsewhere.")
     except ValueError:
         print("Error: Please make sure ID is entered and grades are numeric!")
 
@@ -214,7 +229,7 @@ sorting_button.grid(row=11, column=1, padx=10, pady=5)
 chart_button = tk.Button(root, text="STUDENT PERFORMANCE CHART", width=35, bg="#b4b4cc", font=font_size_label, command=showing_chart)
 chart_button.grid(row=12, column=0, columnspan=2, pady=20)
 
-reset_button = tk.Button(root, text="RESET", width=35, bg="#0D0D5D", font=font_size_label, command=reset_input)
+reset_button = tk.Button(root, text="RESET", width=35, bg="#5BED2F", font=font_size_label, command=reset_input)
 reset_button.grid(row=14, column=0, columnspan=2, pady=20)
 
 

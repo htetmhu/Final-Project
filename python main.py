@@ -100,11 +100,22 @@ def adding_info_grades():
     #adding id and name using strip so that it removes the whitespaces 
     upd_id = ent_id.get().strip()
     upd_name = ent_name.get().strip()
+
+    #Checking input validation for grades ranges and empty strings 
+    if not upd_id or not upd_name:
+        messagebox.showwarning("Input Error!", "Student ID and Name cannot be empty!")
+        return
     
     try:
         m_grade = float(ent_math.get())
         s_grade = float(ent_sci.get())
         i_grade = float(ent_it.get())
+
+        #(GeeksforGeeks, 2020) for any() 
+        #I got this idea from online as I searched, I used this to have a boundary between 0 to 100 so that user cannot input the negative. 
+        if any(grade < 0 or grade > 100 for grade in [m_grade, s_grade, i_grade]):
+            messagebox.showerror("Validation Error", "Grades must be between 0 and 100.")
+            return
         
         #(GeeksforGeeks, 2018)
         #Using id as primary key to access
